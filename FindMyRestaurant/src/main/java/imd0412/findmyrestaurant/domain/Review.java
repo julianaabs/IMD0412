@@ -7,6 +7,12 @@ public class Review
 	private Restaurant restaurant;
 
 	private Integer rating;
+	
+	public Review(String comment, Restaurant restaurant, Integer rating) {
+		this.comment = comment;
+		this.restaurant = restaurant;
+		this.rating = rating;
+	}
 
 	public String getComment()
 	{

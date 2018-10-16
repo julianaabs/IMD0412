@@ -40,9 +40,10 @@ public class FindMyRestaurantAPI
 
 		List<Restaurant> nearRestaurants = restaurantService.findNearRestaurants(coord);
 
-		Stream<Restaurant> filtered = nearRestaurants.stream().filter(t -> t.getSpeciality().equals(speciality));
+//		Stream<Restaurant> filtered = nearRestaurants.stream().filter(t -> t.getSpeciality().equals(speciality));
 
-		return filtered.collect(Collectors.toList());
+	//	return filtered.collect(Collectors.toList());
+		return nearRestaurants;
 	}
 
 	/**
@@ -57,7 +58,7 @@ public class FindMyRestaurantAPI
 	{
 		List<Review> reviews = restaurantService.getReviews(restaurantName);
 
-		List<String> comments = new ArrayList<>();
+		List<String> comments = new ArrayList<String>();
 		for (Review review : reviews)
 		{
 			String comment = review.getComment();
